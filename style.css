@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    --clr-body-bg: hsl(225, 100%, 94%);
+    --clr-accent: hsl(245, 75%, 52%);
+    --clr-accent-tr: hsla(245, 75%, 52%, 0.25);
+    --clr-neutral-1: hsl(0, 0%, 100%);
+    --clr-neutral-2: hsl(225, 100%, 98%);
+    --clr-neutral-3: hsl(224, 23%, 45%);
+    --clr-neutral-4: hsl(223, 47%, 23%);
+    --clr-attribution: hsl(228, 45%, 44%);
+
+    --ff: 'Red Hat Display', sans-serif;
+
+    --fw-heavy: 900;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+picture,
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    background-color: var(--clr-body-bg);
+    background-image: url(images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 27%;
+    padding: 1.5rem;
+}
+
+/* Main (card) */
+.card {
+    background-color: var(--clr-neutral-1);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    min-width: 12.5rem;
+}
+
+.info {
+    display: grid;
+    gap: 1rem;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    font-family: var(--ff);
+    color: var(--clr-neutral-3);
+    font-size: 0.95rem;
+}
+
+.title {
+    font-size: 1.38rem;
+    color: var(--clr-neutral-4);
+    font-weight: var(--fw-heavy);
+}
+
+.description {
+    padding: 0 0.75rem;
+    line-height: 1.65;
+    margin-top: 0.25rem;
+}
+
+.plan {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: var(--clr-neutral-2);
+    padding: 1.2rem 1rem 1rem 1rem;
+    border-radius: 0.6rem;
+    margin-top: 0.35rem;
+}
+
+.plan-info {
+    display: grid;
+    gap: 0.5rem;
+    text-align: left;
+    font-size: 0.87rem;
+}
+
+.type {
+    color: var(--clr-neutral-4);
+    font-weight: var(--fw-heavy);
+}
+
+.price {
+    font-weight: bold;
+}
+
+.change {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--clr-accent);
+    font-weight: var(--fw-heavy);
+}
+
+.change:hover,
+.change:focus-visible {
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.payment {
+    background-color: var(--clr-accent);
+    padding: 1.05rem 0;
+    color: var(--clr-neutral-1);
+    font-weight: bold;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 1rem 1.5rem var(--clr-accent-tr);
+    margin: 0.45rem 0 0.75rem 0;
+}
+
+.payment:hover,
+.payment:focus-visible {
+    opacity: 0.75;
+}
+
+.cancel {
+    background-color: transparent;
+    color: var(--clr-neutral-3);
+    font-weight: var(--fw-heavy);
+    cursor: pointer;
+}
+
+.cancel:hover,
+.cancel:focus-visible {
+    color: var(--clr-neutral-4);
+}
+
+/* Desktop */
+@media screen and (min-width: 30rem) {
+    body {
+        background-image: url(images/pattern-background-desktop.svg);
+        background-size: 100% 48.5%;
+    }
+
+    .card {
+        max-width: 28.125rem;
+    }
+
+    .info {
+        padding: 3.1rem 3rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.63;
+        margin-top: 0.4rem;
+    }
+
+    .plan {
+        padding: 1.6rem 1.5rem;
+        margin-top: 0.15rem;
+    }
+
+    .plan-info {
+        gap: 0.7rem;
+        font-size: 1rem;
+    }
+
+    .change {
+        font-size: 0.86rem;
+    }
+
+    .payment {
+        margin: 1rem 0 1.2rem 0;
+    }
+}
+
+/* Footer */
+.attribution {
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--clr-neutral-4);
+}
+
+.attribution a {
+    color: var(--clr-attribution);
+}
+
+@media screen and (min-width: 30rem) and (min-height: 50rem) {
+    .attribution {
+        position: fixed;
+        bottom: 1rem;
+        justify-self: center;
+    }
+}
+
+/* Theme switcher */
+.dark-mode {
+    --clr-body-bg: hsl(225, 50%, 24%);
+    --clr-accent: hsl(245, 75%, 72%);
+    --clr-accent-tr: hsla(245, 75%, 72%, 0.25);
+    --clr-neutral-1: hsl(0, 0%, 10%);
+    --clr-neutral-2: hsl(225, 50%, 18%);
+    --clr-neutral-3: hsl(224, 23%, 75%);
+    --clr-neutral-4: hsl(223, 47%, 93%);
+    --clr-attribution: hsl(228, 45%, 74%);
+}
+
+.bg {
+    background-image: none;
+}
+
+header {
+    text-align: center;
+}
+
+@media screen and (min-width: 30rem) and (min-height: 50rem) {
+    header {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+.theme-switcher {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
