@@ -59,6 +59,7 @@ body {
     border-radius: 1.25rem;
     overflow: hidden;
     min-width: 12.5rem;
+    box-shadow: 0 2rem 1rem -1rem hsla(245, 75%, 52%, 0.1);
 }
 
 .info {
